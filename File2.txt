@@ -1,1 +1,2 @@
 Hello file 1
+web_path = "https://azuremlexamples.blob.core.windows.net/datasets/credit_card/default%20of%20credit%20card%20clients.csv"
