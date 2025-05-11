@@ -16,3 +16,13 @@ dependencies:
     - inference-schema[numpy-support]==1.3.0
     - xlrd==2.0.1
     - azureml-mlflow==1.42.0
+\
+
+pipeline_job_env = Environment(
+    name=custom_env_name,  # Name of the environment
+    description="Custom environment for Credit Card Defaults pipeline",  # Optional description
+    tags={"scikit-learn": "0.24.2"},  # Metadata tags; here we specify the scikit-learn version
+    conda_file=os.path.join(dependencies_dir, "conda.yaml"),  # Path to the conda environment file (should exist locally)
+    image="mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest",  # Base Docker image used for this environment
+    version="0.1.1",  # Version of this environment; helpful for tracking and reusing
+)
